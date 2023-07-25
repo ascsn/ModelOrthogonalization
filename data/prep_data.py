@@ -32,11 +32,11 @@ for model in models:
 
     selected_data = bmexdb.merge(ZN, on=['Z','N'])
 
-    # the following adds N+2 data points
+    # the following adds N-2 data points
 
     for index, row in ZN.iterrows():
 
-        N = row['N']+2
+        N = row['N']-2
         Z = row['Z']
 
         if(not ((selected_data['Z'] == Z) & (selected_data['N'] == N)).any()):
