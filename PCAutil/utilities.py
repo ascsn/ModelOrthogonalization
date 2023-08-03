@@ -38,5 +38,4 @@ def biplot(score,coef,labels=None):
  
     plt.xlabel("PC{}".format(1))
     plt.ylabel("PC{}".format(2))    
-    plt.show()
     return
