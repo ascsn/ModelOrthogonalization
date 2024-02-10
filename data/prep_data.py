@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
 
-ZN = pd.read_csv('ZN.dat', delim_whitespace=True)
+ZN = pd.read_csv('NZFull2020.txt', delim_whitespace=True)
 
 #delete selected_data.h5 if it exists
 
@@ -34,13 +34,14 @@ for model in models:
 
     # the following adds N-2 data points
 
-    for index, row in ZN.iterrows():
+    # for index, row in ZN.iterrows():
 
-        N = row['N']-2
-        Z = row['Z']
+    #     # N = row['N']-2
+    #     N = row['N']
+    #     Z = row['Z']
 
-        if(not ((selected_data['Z'] == Z) & (selected_data['N'] == N)).any()):
-            selected_data = selected_data._append(bmexdb[(bmexdb['Z'] == Z) & (bmexdb['N'] == N)])
+    #     if(not ((selected_data['Z'] == Z) & (selected_data['N'] == N)).any()):
+    #         selected_data = selected_data._append(bmexdb[(bmexdb['Z'] == Z) & (bmexdb['N'] == N)])
 
 
     selected_data = selected_data.reset_index(drop=True)

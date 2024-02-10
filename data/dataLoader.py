@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 
 
-def h5_data_loader(models, observable, residuals = False):
+def h5_data_loader(models, observable, residuals = False, ZNCoordinates='ZN.dat'):
     """Loads selected_data.h5, and creates a DataFrame with theoretical values of observables + exp values
     
     Inputs:
@@ -12,7 +12,8 @@ def h5_data_loader(models, observable, residuals = False):
     Output: Pandas.DataFrame with theoretical vales, experimental values, and (Z,N) pairs
     """
     # Load ZN + BMEX data
-    ZN = pd.read_csv('.\data\ZN.dat', delim_whitespace=True)
+    # ZN = pd.read_csv('.\data\ZN.dat', delim_whitespace=True)
+    ZN = pd.read_csv('./data/'+ ZNCoordinates, delim_whitespace=True)
     # model_data = pd.read_hdf(".\data\selected_data.h5", key = 'AME2020', mode = 'r')
     model_data = pd.read_hdf("./data/selected_data.h5", key = 'AME2020', mode = 'r')
     
