@@ -13,7 +13,8 @@ def h5_data_loader(models, observable, residuals = False):
     """
     # Load ZN + BMEX data
     ZN = pd.read_csv('.\data\ZN.dat', delim_whitespace=True)
-    model_data = pd.read_hdf(".\data\selected_data.h5", key = 'AME2020', mode = 'r')
+    # model_data = pd.read_hdf(".\data\selected_data.h5", key = 'AME2020', mode = 'r')
+    model_data = pd.read_hdf("./data/selected_data.h5", key = 'AME2020', mode = 'r')
     
     # Which ZN from ZN.dat are in selected_Data.h5
     data_dict = {}
@@ -23,7 +24,8 @@ def h5_data_loader(models, observable, residuals = False):
 
     # Populating data_pd
     for model in models:
-        model_data = pd.read_hdf(".\data\selected_data.h5", key = model, mode = 'r')
+        # model_data = pd.read_hdf(".\data\selected_data.h5", key = model, mode = 'r')
+        model_data = pd.read_hdf("./data/selected_data.h5", key = model, mode = 'r')
 
         index_list = []
         ZN[model] = False
