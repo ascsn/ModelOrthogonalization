@@ -1,5 +1,7 @@
 numpy
 pandas
 tables
-sklearn
+scikit-learn
 matplotlib
+corner
+jinja2

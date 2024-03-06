@@ -1,7 +1,7 @@
 #!/bin/bash
 
-python3 -m venv bmm_env
+python3 -m venv .venv
 
-source bmm_env/bin/activate
+source .venv/bin/activate
 
 pip install -r requirements.txt
